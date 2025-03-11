@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="icon" href="assets/img/App.png">
+
+  <!-- =====BOX ICONS===== -->
+  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+   
+  <title>GigWays</title>
+</head>
+
+<body>
+  <!--===== HEADER =====-->
+  <header class="l-header">
+    <nav class="nav bd-grid">
+      <div>
+        <a href="#" class="nav__logo">GigWays</a>
+      </div>
+
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+          <li class="nav__item"><a href="privacy-policy.html" class="nav__link">Policy</a></li>
+        </ul>
+      </div>
+      <div class="theme">
+        <img src="assets/img/moon.png" id="iconMS" alt="">
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class='bx bx-menu'></i>
+      </div>
+    </nav>
+  </header>
+
+  <main class="l-main">
+    <!--===== HOME =====-->
+    <section class="home bd-grid" id="home">
+      <div class="home__data">
+        <h1 class="home__title">Hi,<br>we are <span class="home__title-color">GigWays</span><br>DriverAssist App</h1>
+       
+        
+        <!--download IOS AND ANDRIOD-->
+      <div>
+          <a href="https://play.google.com/store/apps/details?id=your.app.id" 
+          ><img src="assets/img/andriod.png" alt="Get it on Google Play" width="150" class="dow"></a>
+         <a href="https://apps.apple.com/app/idYOUR_APP_ID">
+           <img src="assets/img/ios.png" alt="Download on the App Store" width="150" class="dow"></a>
+      </div>
+
+        <!--link for facebook twitter and insta-->
+      <div class="home__social">
+        <a href="https://www.facebook.com/profile.php?id=61563875650279" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
+        <a href="https://x.com/i/flow/single_sign_on" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.instagram.com/kasxerofficials/" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
+      </div>
+
+      <div class="home__img">
+        <img src="assets/img/App.png" /> 
+      </div>
+    </section>
+
+    <!--===== ABOUT =====-->
+    <section class="about section " id="about">
+      <h1 class="section-title">About</h1>
+
+      <div class="about__container bd-grid">
+        <div class="about__img">
+          <img src="assets/img/logo.png" alt="Gigways">
+        </div>
+
+        <div>
+          <h2 class="about__subtitle">WHat We Do</h2>
+          <p class="about__text">GigWays is an app designed to help gig workers, freelancers, and independent drivers manage their schedules, track work, and connect with a supportive community. It offers secure account management, personalized profiles, and scheduling features with smart reminders to prevent burnout. The app also includes driving detection, safety features, and a community forum for sharing experiences and support. With data encryption and privacy controls, GigWays ensures user safety while continuously improving based on feedback. Its goal is to make work easier, safer, and more organized, providing a simple, efficient solution for gig workers.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="colored-section" id="a">
+
+      <div id="about-carousel" class="carousel slide" data-ride="false">
+        <div class="carousel-inner">
+          <div class="carousel-item active container-fluid">
+            <h2 class="about-text">My name is Aita Subba, High school graducate and self taught web developer.</h2>
+            <img class="about-image" src="assets/img/aita.png" alt="My picture">
+            <em>Aita Subba</em>
+          </div>
+          <div class="carousel-item container-fluid">
+            <h2 class="about-text">Reason to hire me, so I can learn and grow in my programing skills to achieve bigger and greater for company.</h2>
+            <img class="about-image" src="assets/img/web.png" alt="Web developer">
+            <em>Fall in Love</em>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#about-carousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#about-carousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+        </a>
+      </div>
+    </section> -->
+ 
+    <!--===== WORK =====-->
+
+    <!--===== CONTACT =====-->
+    <section class="contact section" id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact__container bd-grid">
+        <form id="my-form" action="https://formspree.io/f/mzboyvbe" method="POST" class="contact__form">
+          <input type="text" placeholder="Name" class="contact__input">
+          <input class="contact__input"type="email" name="email" placeholder="Email"/>
+          <textarea type="text" name="message" cols="0" rows="10" class="contact__input" placeholder="Send me message!"></textarea>
+          <button id="my-form-button" class="btn">Submit</button>
+          <p id="my-form-status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!--===== FOOTER =====-->
+  <footer class="footer">
+    <p class="footer__title">Gigways LLC</p>
+    <div class="footer__social">
+      <a href="https://www.instagram.com/kasxerofficials/" class="footer__icon"><i class='bx bxl-instagram'></i></a>
+      <a href="https://www.facebook.com/profile.php?id=61563875650279" class="footer__icon"><i class='bx bxl-facebook'></i></a>
+      <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="footer__icon"><i class='bx bxs-envelope'></i></a>
+    <p class="footer__copy">©GigWays LLC 2025</p>
+    <p class="footer__copy">Gigwaysofficial@gmail.com</p>
+    <p class="footer__copy">+14705309251</p>
+    </div>
+    
+  </footer>
+
+  <!--===== SCROLL REVEAL =====-->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+
+  <!--===== MAIN JS =====-->
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
