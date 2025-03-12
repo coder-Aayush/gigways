@@ -5,17 +5,10 @@
   --header-height: 3rem;
   --font-semi: 600;
   /*===== Colores =====*/
-  /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
-  /* HSL color mode */
-  /* --hue-color: 224; */
 
   --first-color: #FFFAFA;
   --second-color: #121212;
   --third-color:  #546bab;
-
-  /* --first-color: #121212;
-  --second-color: #FFFAFA;
-  --third-color:  #546bab; */
 
   /*===== Fuente y tipografia =====*/
   --body-font: 'Poppins', sans-serif;
@@ -90,29 +83,6 @@ img {
 }
 
 /*===== CLASS CSS ===== */
-.section-title {
-  position: relative;
-  font-size: var(--h2-font-size);
-  color: var(--second-color);
-  margin-top: var(--mb-2);
-  margin-bottom: var(--mb-4);
-  text-align: center;
-  flex-direction: column;
-}
-
-.section-title::after {
-  position: absolute;
-  content: '';
-  /* width: 64px; */
-  /* height: 0.18rem; */
-  left: 0;
-  right: 0;
-  margin: auto;
-  /* top: 2rem; */
-  background-color: var(--first-color);
-  width: 80px;
-  top: 3rem;
-}
 
 .section-title:hover{
   color: var(--third-color);
@@ -271,70 +241,6 @@ img {
   width: 360px;
 }
 
-/*BUTTONS*/
-.button {
-  display: inline-block;
-  background-color: var(--third-color);
-  color: var(--second-color);
-  padding: .75rem 2.5rem;
-  font-weight: var(--font-semi);
-  border-radius: .5rem;
-  transition: .3s;
-}
-
-.button:hover {
-  box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
-  background-color: var(--first-color);
-}
-.buttonRe{
-  display: inline-block;
-  background-color: var(--second-color);
-  color: var(--third-color);;
-  padding: .75rem 2.5rem;
-  font-weight: var(--font-semi);
-  border-radius: .5rem;
-  transition: .3s;
-}
-.buttonRe:hover{
-  background-color: var(--first-color);
-}
-/* ===== ABOUT =====*/
-/* .about__container {
-  row-gap: 2rem;
-  text-align: center;
-}
-
-.about__subtitle {
-  margin-bottom: var(--mb-2);
-}
-
-.about__img {
-  justify-self: center;
-}
-
-.about__img img {
-  width: 200px;
-  border-radius: .5rem;
-} */
-
-/* ===== WORK =====*/
-.work__container {
-  row-gap: 2rem;
-}
-
-.work__img {
-  box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
-  border-radius: .5rem;
-  overflow: hidden;
-}
-
-.work__img img {
-  transition: 1s;
-}
-
-.work__img img:hover {
-  transform: scale(1.1);
-}
 
 /* ===== CONTACT =====*/
 .contact__input {
@@ -495,12 +401,12 @@ img {
     width: 400px;
     bottom: 10%;
   }
-  /* .about__container {
+  .about__container {
     padding-top: 2rem;
   }
   .about__img img {
     width: 300px;
-  } */
+  }
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
@@ -541,7 +447,6 @@ img {
 .card .btnp:hover{
   background-color: var(--third-color);
 }
-
 /* for download */
 .dow{
   margin-top: 20px;
@@ -580,13 +485,11 @@ img {
 .about__text {
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
   max-width: 600px;
 }
 
 .about__subtitle {
   font-size: 1.5rem;
-  color: #333;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -594,7 +497,6 @@ img {
 .section-title {
   text-align: center;
   font-size: 2rem;
-  color: #333;
   margin-bottom: 20px;
 }
 
@@ -619,3 +521,4 @@ img {
     font-size: 1.3rem;
   }
 }
+
