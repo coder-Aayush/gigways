@@ -1,122 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/App.png" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/css/styles.css">
-  <link rel="icon" href="assets/img/App.png">
+    <!-- Box Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-  <!-- =====BOX ICONS===== -->
-  <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
-   
-  <title>GigWays</title>
-</head>
+    <!-- Swiper CSS for carousel -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
-<body>
-  <!--===== HEADER =====-->
-  <header class="l-header">
-    <nav class="nav bd-grid">
-      <div>
-        <a href="#" class="nav__logo">GigWays</a>
-      </div>
+    <title>GigWays - Driver Assistant App</title>
+  </head>
 
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-          <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
-          <li class="nav__item"><a href="privacy-policy.html" class="nav__link">Policy</a></li>
-        </ul>
-      </div>
-      <div class="theme">
-        <img src="assets/img/moon.png" id="iconMS" alt="">
-      </div>
-
-      <div class="nav__toggle" id="nav-toggle">
-        <i class='bx bx-menu'></i>
-      </div>
-    </nav>
-  </header>
-
-  <main class="l-main">
-    <!--===== HOME =====-->
-    <section class="home bd-grid" id="home">
-      <div class="home__data">
-        <h1 class="home__title">Hi,<br>we are <span class="home__title-color">GigWays</span><br>DriverAssist App</h1>
-       
-        
-        <!--download IOS AND ANDRIOD-->
-      <div>
-          <a href="https://play.google.com/store/apps/details?id=your.app.id" 
-          ><img src="assets/img/andriod.png" alt="Get it on Google Play" width="150" class="dow"></a>
-         <a href="https://apps.apple.com/app/idYOUR_APP_ID">
-           <img src="assets/img/ios.png" alt="Download on the App Store" width="150" class="dow"></a>
-      </div>
-
-        <!--link for facebook twitter and insta-->
-      <div class="home__social">
-        <a href="https://www.facebook.com/profile.php?id=61563875650279" class="home__social-icon"><i class='bx bxl-facebook'></i></a>
-        <a href="https://x.com/i/flow/single_sign_on" class="home__social-icon"><i class='bx bxl-twitter'></i></a>
-        <a href="https://www.instagram.com/kasxerofficials/" class="home__social-icon"><i class='bx bxl-instagram'></i></a>
-      </div>
-
-      <div class="home__img">
-        <img src="assets/img/App.png" /> 
-      </div>
-    </section>
-
-    <!--===== ABOUT =====-->
-    <section class="about section " id="about">
-      <h1 class="section-title">About</h1>
-
-      <div class="about__container bd-grid">
-        <div class="about__img">
-          <img src="assets/img/logo.png" alt="Gigways">
-        </div>
-
+  <body>
+    <!--===== HEADER =====-->
+    <header class="l-header">
+      <nav class="nav bd-grid">
         <div>
-          <h2 class="about__subtitle">WHat We Do</h2>
-          <p class="about__text">GigWays is an app designed to help gig workers, freelancers, and independent drivers manage their schedules, track work, and connect with a supportive community. It offers secure account management, personalized profiles, and scheduling features with smart reminders to prevent burnout. The app also includes driving detection, safety features, and a community forum for sharing experiences and support. With data encryption and privacy controls, GigWays ensures user safety while continuously improving based on feedback. Its goal is to make work easier, safer, and more organized, providing a simple, efficient solution for gig workers.</p>
+          <a href="#" class="nav__logo">GigWays</a>
+        </div>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="#home" class="nav__link active">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="#features" class="nav__link">Features</a>
+            </li>
+            <li class="nav__item">
+              <a href="#preview" class="nav__link">App Preview</a>
+            </li>
+            <li class="nav__item">
+              <a href="#about" class="nav__link">About</a>
+            </li>
+            <li class="nav__item">
+              <a href="#contact" class="nav__link">Contact</a>
+            </li>
+            <li class="nav__item">
+              <a href="privacy-policy.html" class="nav__link">Policy</a>
+            </li>
+          </ul>
+        </div>
+        <div class="theme">
+          <img src="assets/img/moon.png" id="iconMS" alt="Toggle theme" />
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+
+    <main class="l-main">
+      <!--===== HOME =====-->
+      <section class="home bd-grid" id="home">
+        <div class="home__data">
+          <h1 class="home__title">
+            Welcome to <span class="home__title-color">GigWays</span>
+          </h1>
+          <p class="home__description">
+            Your ultimate companion for gig workers and drivers
+          </p>
+
+          <div class="home__cta">
+            <p class="cta__text">
+              Download our app today and boost your productivity!
+            </p>
+            <div class="home__download">
+              <a
+                href="https://play.google.com/store/apps/details?id=your.app.id"
+                class="download__link"
+              >
+                <img
+                  src="assets/img/andriod.png"
+                  alt="Get it on Google Play"
+                  class="download__img"
+                />
+              </a>
+              <a
+                href="https://apps.apple.com/app/idYOUR_APP_ID"
+                class="download__link"
+              >
+                <img
+                  src="assets/img/ios.png"
+                  alt="Download on the App Store"
+                  class="download__img"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="home__social">
+          <a
+            href="https://www.facebook.com/profile.php?id=61563875650279"
+            class="home__social-icon"
+            ><i class="bx bxl-facebook"></i
+          ></a>
+          <a
+            href="https://x.com/i/flow/single_sign_on"
+            class="home__social-icon"
+            ><i class="bx bxl-twitter"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/kasxerofficials/"
+            class="home__social-icon"
+            ><i class="bx bxl-instagram"></i
+          ></a>
+        </div>
+
+        <div class="home__img">
+          <img src="assets/img/logo.svg" alt="GigWays Logo" />
+        </div>
+      </section>
+
+      <!--===== FEATURES =====-->
+      <section class="features section" id="features">
+        <h2 class="section-title">Key Features</h2>
+
+        <div class="features__container bd-grid">
+          <div class="feature__card">
+            <div class="feature__icon">
+              <i class="bx bx-calendar-check"></i>
+            </div>
+            <h3 class="feature__title">Smart Scheduling</h3>
+            <p class="feature__description">
+              Manage your work schedule efficiently with reminders to prevent
+              burnout
+            </p>
+          </div>
+
+          <div class="feature__card">
+            <div class="feature__icon">
+              <i class="bx bx-shield-quarter"></i>
+            </div>
+            <h3 class="feature__title">Safety Features</h3>
+            <p class="feature__description">
+              Enhanced driving detection and safety measures for drivers on the
+              go
+            </p>
+          </div>
+
+          <div class="feature__card">
+            <div class="feature__icon">
+              <i class="bx bx-group"></i>
+            </div>
+            <h3 class="feature__title">Community Support</h3>
+            <p class="feature__description">
+              Connect with other gig workers and share experiences in our
+              community forum
+            </p>
+          </div>
+
+          <div class="feature__card">
+            <div class="feature__icon">
+              <i class="bx bx-lock-alt"></i>
+            </div>
+            <h3 class="feature__title">Secure Accounts</h3>
+            <p class="feature__description">
+              Data encryption and privacy controls to ensure your information
+              stays safe
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!--===== APP PREVIEW CAROUSEL =====-->
+      <section class="preview section" id="preview">
+        <h2 class="section-title">App Preview</h2>
+
+        <div class="preview__container">
+          <!-- Swiper carousel -->
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <!-- Replace these with your actual screenshots -->
+              <div class="swiper-slide">
+                <div class="screenshot__container">
+                  <img
+                    src="assets/img/screenshots/home.png"
+                    alt="App Screenshot 1"
+                    class="screenshot__img"
+                  />
+                  <div class="screenshot__overlay">
+                    <h3 class="screenshot__title">Dashboard</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="screenshot__container">
+                  <img
+                    src="assets/img/screenshots/strike.png"
+                    alt="App Screenshot 2"
+                    class="screenshot__img"
+                  />
+                  <div class="screenshot__overlay">
+                    <h3 class="screenshot__title">Schedule Manager</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="screenshot__container">
+                  <img
+                    src="assets/img/screenshots/schedule.png"
+                    alt="App Screenshot 3"
+                    class="screenshot__img"
+                  />
+                  <div class="screenshot__overlay">
+                    <h3 class="screenshot__title">Schedule Overview</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="screenshot__container">
+                  <img
+                    src="assets/img/screenshots/tracker_home.png"
+                    alt="App Screenshot 4"
+                    class="screenshot__img"
+                  />
+                  <div class="screenshot__overlay">
+                    <h3 class="screenshot__title">Profile Settings</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add Navigation Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!--===== ABOUT =====-->
+      <section class="about section" id="about">
+        <h2 class="section-title">About Us</h2>
+
+        <div class="about__container bd-grid">
+          <div class="about__img">
+            <img src="assets/img/screenshots/welcome.png" alt="Gigways" />
+          </div>
+
+          <div class="about__content">
+            <h2 class="about__subtitle">What We Do</h2>
+            <p class="about__text">
+              GigWays is an app designed to help gig workers, freelancers, and
+              independent drivers manage their schedules, track work, and
+              connect with a supportive community. It offers secure account
+              management, personalized profiles, and scheduling features with
+              smart reminders to prevent burnout.
+            </p>
+
+            <p class="about__text">
+              The app also includes driving detection, safety features, and a
+              community forum for sharing experiences and support. With data
+              encryption and privacy controls, GigWays ensures user safety while
+              continuously improving based on feedback. Our goal is to make work
+              easier, safer, and more organized, providing a simple, efficient
+              solution for gig workers.
+            </p>
+
+            <a href="#contact" class="about__button btn">Get In Touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!--===== TESTIMONIALS =====-->
+      <section class="testimonials section">
+        <h2 class="section-title">What Users Say</h2>
+
+        <div class="testimonials__container bd-grid">
+          <div class="testimonial__card">
+            <div class="testimonial__content">
+              <p class="testimonial__text">
+                "GigWays has completely changed how I manage my driving
+                schedule. The reminders help me avoid burnout and the community
+                support is amazing!"
+              </p>
+            </div>
+            <div class="testimonial__user">
+              <div class="testimonial__avatar">
+                <i class="bx bxs-user-circle"></i>
+              </div>
+              <div class="testimonial__info">
+                <h3 class="testimonial__name">Sarah K.</h3>
+                <p class="testimonial__role">Rideshare Driver</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial__card">
+            <div class="testimonial__content">
+              <p class="testimonial__text">
+                "The safety features give me peace of mind when I'm on the road.
+                It's like having a co-pilot that keeps me safe and organized."
+              </p>
+            </div>
+            <div class="testimonial__user">
+              <div class="testimonial__avatar">
+                <i class="bx bxs-user-circle"></i>
+              </div>
+              <div class="testimonial__info">
+                <h3 class="testimonial__name">Michael T.</h3>
+                <p class="testimonial__role">Delivery Driver</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--===== CONTACT =====-->
+      <section class="contact section" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact__container bd-grid">
+          <form
+            id="my-form"
+            action="https://formspree.io/f/mzboyvbe"
+            method="POST"
+            class="contact__form"
+          >
+            <div class="form__group">
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                class="contact__input"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                class="contact__input"
+                required
+              />
+            </div>
+
+            <div class="form__group">
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                class="contact__input"
+                rows="7"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="my-form-button"
+              class="btn contact__button"
+            >
+              <span>Send Message</span>
+              <i class="bx bx-send"></i>
+            </button>
+
+            <p id="my-form-status"></p>
+          </form>
+
+          <div class="contact__info">
+            <div class="contact__info-item">
+              <i class="bx bx-map contact__info-icon"></i>
+              <div>
+                <h3 class="contact__info-title">Address</h3>
+                <p class="contact__info-text">Atlanta, Georgia</p>
+              </div>
+            </div>
+
+            <div class="contact__info-item">
+              <i class="bx bx-phone contact__info-icon"></i>
+              <div>
+                <h3 class="contact__info-title">Phone</h3>
+                <p class="contact__info-text">+1 (470) 530-9251</p>
+              </div>
+            </div>
+
+            <div class="contact__info-item">
+              <i class="bx bx-envelope contact__info-icon"></i>
+              <div>
+                <h3 class="contact__info-title">Email</h3>
+                <p class="contact__info-text">Gigwaysofficial@gmail.com</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--===== FOOTER =====-->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__content">
+          <h2 class="footer__title">GigWays LLC</h2>
+          <p class="footer__description">
+            Making work easier, safer, and more organized for gig workers
+          </p>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__subtitle">Quick Links</h3>
+          <ul class="footer__links">
+            <li><a href="#home" class="footer__link">Home</a></li>
+            <li><a href="#features" class="footer__link">Features</a></li>
+            <li><a href="#about" class="footer__link">About</a></li>
+            <li><a href="#contact" class="footer__link">Contact</a></li>
+            <li>
+              <a href="privacy-policy.html" class="footer__link"
+                >Privacy Policy</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__subtitle">Connect With Us</h3>
+          <div class="footer__social">
+            <a
+              href="https://www.facebook.com/profile.php?id=61563875650279"
+              class="footer__icon"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="https://x.com/i/flow/single_sign_on" class="footer__icon"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/kasxerofficials/"
+              class="footer__icon"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="mailto:Gigwaysofficial@gmail.com" class="footer__icon"
+              ><i class="bx bxs-envelope"></i
+            ></a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!--===== CONTACT =====-->
-    <section class="contact section" id="contact">
-      <h2 class="section-title">Contact Us</h2>
-      <div class="contact__container bd-grid">
-        <form id="my-form" action="https://formspree.io/f/mzboyvbe" method="POST" class="contact__form">
-          <input type="text" placeholder="Name" class="contact__input">
-          <input class="contact__input"type="email" name="email" placeholder="Email"/>
-          <textarea type="text" name="message" cols="0" rows="10" class="contact__input" placeholder="Send me message!"></textarea>
-          <button id="my-form-button" class="btn">Submit</button>
-          <p id="my-form-status"></p>
-        </form>
+      <div class="footer__bottom">
+        <p class="footer__copy">© GigWays LLC 2025. All rights reserved.</p>
       </div>
-    </section>
-  </main>
+    </footer>
 
-  <!--===== FOOTER =====-->
-  <footer class="footer">
-    <p class="footer__title">Gigways LLC</p>
-    <div class="footer__social">
-      <a href="https://www.instagram.com/kasxerofficials/" class="footer__icon"><i class='bx bxl-instagram'></i></a>
-      <a href="https://www.facebook.com/profile.php?id=61563875650279" class="footer__icon"><i class='bx bxl-facebook'></i></a>
-      <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" class="footer__icon"><i class='bx bxs-envelope'></i></a>
-    <p class="footer__copy">©GigWays LLC 2025</p>
-    <p class="footer__copy">Gigwaysofficial@gmail.com</p>
-    <p class="footer__copy">+14705309251</p>
-    </div>
-    
-  </footer>
+    <!--===== SCROLL REVEAL =====-->
+    <script src="https://unpkg.com/scrollreveal"></script>
 
-  <!--===== SCROLL REVEAL =====-->
-  <script src="https://unpkg.com/scrollreveal"></script>
+    <!--===== SWIPER JS =====-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-
-  <!--===== MAIN JS =====-->
-  <script src="assets/js/main.js"></script>
-</body>
-
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
