@@ -19,16 +19,6 @@
       rel="stylesheet"
     />
     <style>
-      /* Global Variables & Reset */
-      :root {
-        --first-color: #fffafa;
-        --second-color: #121212;
-        --third-color: #546bab;
-        --accent-color: #64a0ff;
-        --text-color-light: #8a8a8a;
-        --body-font: "Poppins", sans-serif;
-      }
-
       .section {
         padding-top: 0px;
         padding-bottom: 4px;
@@ -394,24 +384,13 @@
       <p>© GigWays LLC 2025. All rights reserved.</p>
     </footer>
 
-    <script>
-      // Generate soft bubble background
-      document.addEventListener("DOMContentLoaded", function () {
-        const bubbleContainer = document.querySelector(".bubble-container");
-        const bubbleCount = 20;
-        for (let i = 0; i < bubbleCount; i++) {
-          const bubble = document.createElement("div");
-          bubble.classList.add("bubble");
-          const size = Math.floor(Math.random() * 50) + 20;
-          bubble.style.width = size + "px";
-          bubble.style.height = size + "px";
-          bubble.style.left = Math.random() * 100 + "%";
-          bubble.style.top = Math.random() * 100 + "%";
-          bubble.style.animationDuration = Math.random() * 4 + 8 + "s";
-          bubble.style.animationDelay = Math.random() * 5 + "s";
-          bubbleContainer.appendChild(bubble);
-        }
-      });
-    </script>
+    <!--===== SCROLL REVEAL =====-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"
+      integrity="sha256-YHdamLXLIBEicRscu4gge3gdzJSWGvvWggYMiCYwCg0="
+      crossorigin="anonymous"
+    ></script>
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
