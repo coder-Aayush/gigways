@@ -12,23 +12,18 @@
       rel="stylesheet"
     />
 
-    <!-- Swiper CSS for carousel -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
     <title>GigWays - Driver Assistant App</title>
   </head>
-
   <body>
+    <!-- Bubble Background Animation -->
+    <div class="bubble-container"></div>
+
     <!--===== HEADER =====-->
     <header class="l-header">
       <nav class="nav bd-grid">
         <div>
           <a href="#" class="nav__logo">GigWays</a>
         </div>
-
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list">
             <li class="nav__item">
@@ -54,7 +49,6 @@
         <div class="theme">
           <img src="assets/img/moon.png" id="iconMS" alt="Toggle theme" />
         </div>
-
         <div class="nav__toggle" id="nav-toggle">
           <i class="bx bx-menu"></i>
         </div>
@@ -65,13 +59,12 @@
       <!--===== HOME =====-->
       <section class="home bd-grid" id="home">
         <div class="home__data">
-          <h1 class="home__title">
+          <h1 class="home__title" style="text-align: start">
             Welcome to <span class="home__title-color">GigWays</span>
           </h1>
           <p class="home__description">
             Your ultimate companion for gig workers and drivers
           </p>
-
           <div class="home__cta">
             <p class="cta__text">
               Download our app today and boost your productivity!
@@ -100,25 +93,26 @@
             </div>
           </div>
         </div>
-
         <div class="home__social">
           <a
             href="https://www.facebook.com/profile.php?id=61563875650279"
             class="home__social-icon"
-            ><i class="bx bxl-facebook"></i
-          ></a>
+          >
+            <i class="bx bxl-facebook"></i>
+          </a>
           <a
             href="https://x.com/i/flow/single_sign_on"
             class="home__social-icon"
-            ><i class="bx bxl-twitter"></i
-          ></a>
+          >
+            <i class="bx bxl-twitter"></i>
+          </a>
           <a
             href="https://www.instagram.com/kasxerofficials/"
             class="home__social-icon"
-            ><i class="bx bxl-instagram"></i
-          ></a>
+          >
+            <i class="bx bxl-instagram"></i>
+          </a>
         </div>
-
         <div class="home__img">
           <img src="assets/img/logo.svg" alt="GigWays Logo" />
         </div>
@@ -127,7 +121,6 @@
       <!--===== FEATURES =====-->
       <section class="features section" id="features">
         <h2 class="section-title">Key Features</h2>
-
         <div class="features__container bd-grid">
           <div class="feature__card">
             <div class="feature__icon">
@@ -139,7 +132,6 @@
               burnout
             </p>
           </div>
-
           <div class="feature__card">
             <div class="feature__icon">
               <i class="bx bx-shield-quarter"></i>
@@ -150,7 +142,6 @@
               go
             </p>
           </div>
-
           <div class="feature__card">
             <div class="feature__icon">
               <i class="bx bx-group"></i>
@@ -161,7 +152,6 @@
               community forum
             </p>
           </div>
-
           <div class="feature__card">
             <div class="feature__icon">
               <i class="bx bx-lock-alt"></i>
@@ -178,81 +168,71 @@
       <!--===== APP PREVIEW CAROUSEL =====-->
       <section class="preview section" id="preview">
         <h2 class="section-title">App Preview</h2>
-
-        <div class="preview__container">
-          <!-- Swiper carousel -->
-          <div class="swiper-container">
-            <div class="swiper-wrapper">
-              <!-- Replace these with your actual screenshots -->
-              <div class="swiper-slide">
-                <div class="screenshot__container">
+        <div class="screenshot-slider">
+          <div class="slider-container">
+            <button class="prev-btn">&#10094;</button>
+            <div class="slider-wrapper">
+              <div class="slider-track">
+                <div class="slide">
                   <img
-                    src="assets/img/screenshots/home.png"
-                    alt="App Screenshot 1"
-                    class="screenshot__img"
+                    src="./assets/img/screenshots/welcome.png"
+                    alt="Screen 1"
                   />
-                  <div class="screenshot__overlay">
-                    <h3 class="screenshot__title">Dashboard</h3>
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="screenshot__container">
-                  <img
-                    src="assets/img/screenshots/strike.png"
-                    alt="App Screenshot 2"
-                    class="screenshot__img"
-                  />
-                  <div class="screenshot__overlay">
-                    <h3 class="screenshot__title">Schedule Manager</h3>
-                  </div>
+                <div class="slide">
+                  <img src="./assets/img/screenshots/home.png" alt="Screen 2" />
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="screenshot__container">
+                <div class="slide">
                   <img
-                    src="assets/img/screenshots/schedule.png"
-                    alt="App Screenshot 3"
-                    class="screenshot__img"
+                    src="./assets/img/screenshots/schedule.png"
+                    alt="Screen 3"
                   />
-                  <div class="screenshot__overlay">
-                    <h3 class="screenshot__title">Schedule Overview</h3>
-                  </div>
                 </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="screenshot__container">
+                <div class="slide">
                   <img
-                    src="assets/img/screenshots/tracker_home.png"
-                    alt="App Screenshot 4"
-                    class="screenshot__img"
+                    src="./assets/img/screenshots/tracker_home.png"
+                    alt="Screen 4"
                   />
-                  <div class="screenshot__overlay">
-                    <h3 class="screenshot__title">Profile Settings</h3>
-                  </div>
+                </div>
+                <div class="slide">
+                  <img
+                    src="./assets/img/screenshots/strike.png"
+                    alt="Screen 5"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="./assets/img/screenshots/schedule.png"
+                    alt="Screen 6"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="./assets/img/screenshots/tracker_home.png"
+                    alt="Screen 7"
+                  />
+                </div>
+                <div class="slide">
+                  <img
+                    src="./assets/img/screenshots/shift_completed.png"
+                    alt="Screen 8"
+                  />
                 </div>
               </div>
             </div>
-
-            <!-- Add Navigation Arrows -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
+            <button class="next-btn">&#10095;</button>
           </div>
+          <div class="indicators"></div>
         </div>
       </section>
 
       <!--===== ABOUT =====-->
       <section class="about section" id="about">
         <h2 class="section-title">About Us</h2>
-
         <div class="about__container bd-grid">
           <div class="about__img">
             <img src="assets/img/screenshots/welcome.png" alt="Gigways" />
           </div>
-
           <div class="about__content">
             <h2 class="about__subtitle">What We Do</h2>
             <p class="about__text">
@@ -262,7 +242,6 @@
               management, personalized profiles, and scheduling features with
               smart reminders to prevent burnout.
             </p>
-
             <p class="about__text">
               The app also includes driving detection, safety features, and a
               community forum for sharing experiences and support. With data
@@ -271,7 +250,6 @@
               easier, safer, and more organized, providing a simple, efficient
               solution for gig workers.
             </p>
-
             <a href="#contact" class="about__button btn">Get In Touch</a>
           </div>
         </div>
@@ -280,7 +258,6 @@
       <!--===== TESTIMONIALS =====-->
       <section class="testimonials section">
         <h2 class="section-title">What Users Say</h2>
-
         <div class="testimonials__container bd-grid">
           <div class="testimonial__card">
             <div class="testimonial__content">
@@ -300,7 +277,6 @@
               </div>
             </div>
           </div>
-
           <div class="testimonial__card">
             <div class="testimonial__content">
               <p class="testimonial__text">
@@ -340,7 +316,6 @@
                 required
               />
             </div>
-
             <div class="form__group">
               <input
                 type="email"
@@ -350,7 +325,6 @@
                 required
               />
             </div>
-
             <div class="form__group">
               <textarea
                 name="message"
@@ -360,7 +334,6 @@
                 required
               ></textarea>
             </div>
-
             <button
               type="submit"
               id="my-form-button"
@@ -369,10 +342,8 @@
               <span>Send Message</span>
               <i class="bx bx-send"></i>
             </button>
-
             <p id="my-form-status"></p>
           </form>
-
           <div class="contact__info">
             <div class="contact__info-item">
               <i class="bx bx-map contact__info-icon"></i>
@@ -381,7 +352,6 @@
                 <p class="contact__info-text">Atlanta, Georgia</p>
               </div>
             </div>
-
             <div class="contact__info-item">
               <i class="bx bx-phone contact__info-icon"></i>
               <div>
@@ -389,7 +359,6 @@
                 <p class="contact__info-text">+1 (470) 530-9251</p>
               </div>
             </div>
-
             <div class="contact__info-item">
               <i class="bx bx-envelope contact__info-icon"></i>
               <div>
@@ -411,7 +380,6 @@
             Making work easier, safer, and more organized for gig workers
           </p>
         </div>
-
         <div class="footer__content">
           <h3 class="footer__subtitle">Quick Links</h3>
           <ul class="footer__links">
@@ -426,7 +394,6 @@
             </li>
           </ul>
         </div>
-
         <div class="footer__content">
           <h3 class="footer__subtitle">Connect With Us</h3>
           <div class="footer__social">
@@ -449,18 +416,17 @@
           </div>
         </div>
       </div>
-
       <div class="footer__bottom">
         <p class="footer__copy">© GigWays LLC 2025. All rights reserved.</p>
       </div>
     </footer>
 
     <!--===== SCROLL REVEAL =====-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--===== SWIPER JS =====-->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"
+      integrity="sha256-YHdamLXLIBEicRscu4gge3gdzJSWGvvWggYMiCYwCg0="
+      crossorigin="anonymous"
+    ></script>
     <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
   </body>

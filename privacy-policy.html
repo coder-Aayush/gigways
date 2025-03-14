@@ -1,119 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="assets/img/App.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="icon" href="assets/img/App.png" />
+
+    <!-- Box Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="assets/img/App.png" />
     <title>Privacy Policy - GigWays</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+      .section {
+        padding-top: 0px;
+        padding-bottom: 4px;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: var(--body-font);
+        background-color: var(--first-color);
+        color: var(--second-color);
+        line-height: 1.6;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      /* Header */
+      .l-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--first-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+      }
+      .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        max-width: 1024px;
+        margin: 0 auto;
+      }
+      .nav__logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--second-color);
+      }
+      .nav__list {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+      }
+      .nav__link {
+        color: var(--second-color);
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+      .nav__link:hover,
+      .nav__link.active {
+        color: var(--third-color);
+      }
+
+      /* Background Animations */
+      .background-animation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(270deg, #e0eafc, #cfdef3);
+        background-size: 400% 400%;
+        animation: gradientAnimation 15s ease infinite;
+        z-index: -3;
+      }
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 50%;
         }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        50% {
+          background-position: 100% 50%;
         }
-        h1, h2 {
-            color: #007bff;
+        100% {
+          background-position: 0% 50%;
         }
-        ul {
-            padding-left: 20px;
+      }
+      .bubble-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -2;
+        pointer-events: none;
+        overflow: hidden;
+      }
+      .bubble {
+        position: absolute;
+        background: rgba(84, 107, 171, 0.15);
+        border-radius: 50%;
+        opacity: 0.7;
+        animation: bubbleAnimation 10s infinite ease-in-out;
+      }
+      @keyframes bubbleAnimation {
+        0% {
+          transform: translateY(0) scale(0.5);
+          opacity: 0.7;
         }
-        .section {
-            margin-bottom: 20px;
+        50% {
+          transform: translateY(-50vh) scale(1);
+          opacity: 0.3;
         }
+        100% {
+          transform: translateY(-100vh) scale(0.5);
+          opacity: 0.7;
+        }
+      }
+
+      /* Main Content */
+      main {
+        padding-top: 80px; /* Space for fixed header */
+        max-width: 1024px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .policy-container {
+        background: #fff;
+        border-radius: 8px;
+        padding: 40px;
+        margin: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        font-size: 2.5rem;
+        color: var(--third-color);
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      h2 {
+        font-size: 1.5rem;
+        color: var(--third-color);
+        margin: 20px 0 10px;
+      }
+      p {
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+      ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--second-color);
+        color: var(--first-color);
+        padding: 20px;
+        text-align: center;
+        margin-top: 40px;
+      }
+      .footer p {
+        font-size: 0.9rem;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .policy-container {
+          padding: 20px;
+          margin: 10px;
+        }
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.9rem;
+        }
+      }
     </style>
-</head>
-<body>
-    <div class="container">
+  </head>
+  <body>
+    <!-- Background Animations -->
+    <div class="background-animation"></div>
+    <div class="bubble-container"></div>
+
+    <!-- Header -->
+    <header class="l-header">
+      <nav class="nav">
+        <a href="index.html" class="nav__logo">GigWays</a>
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="#features" class="nav__link">Features</a></li>
+          <li><a href="#preview" class="nav__link">App Preview</a></li>
+          <li><a href="#about" class="nav__link">About</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+          <li>
+            <a href="privacy-policy.html" class="nav__link active"
+              >Privacy Policy</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <div class="policy-container">
         <h1>Privacy Policy - GigWays</h1>
         <p>Effective Date: [03/11/2025]</p>
-        
+
         <div class="section">
-            <h2>1. Introduction</h2>
-            <p>Welcome to GigWays. Your privacy is of the utmost importance to us. This Privacy Policy explains how we collect, use, and protect your information when you use our application and services.</p>
+          <h2>1. Introduction</h2>
+          <p>
+            Welcome to GigWays. Your privacy is of the utmost importance to us.
+            This Privacy Policy explains how we collect, use, and protect your
+            information when you use our application and services.
+          </p>
         </div>
-        
+
         <div class="section">
-            <h2>2. Information We Collect</h2>
-            <ul>
-                <li><strong>Personal Information:</strong> Name, email, phone number, state location, and profile details.</li>
-                <li><strong>Usage Data:</strong> Work schedules, community interactions, and engagement within the app.</li>
-                <li><strong>Device & Location Data:</strong> Driving activity detection, GPS-based location for safety features, and notification tracking.</li>
-                <li><strong>Technical Data:</strong> IP address, browser type, operating system, and app performance analytics.</li>
-            </ul>
+          <h2>2. Information We Collect</h2>
+          <ul>
+            <li>
+              <strong>Personal Information:</strong> Name, email, phone number,
+              state location, and profile details.
+            </li>
+            <li>
+              <strong>Usage Data:</strong> Work schedules, community
+              interactions, and engagement within the app.
+            </li>
+            <li>
+              <strong>Device & Location Data:</strong> Driving activity
+              detection, GPS-based location for safety features, and
+              notification tracking.
+            </li>
+            <li>
+              <strong>Technical Data:</strong> IP address, browser type,
+              operating system, and app performance analytics.
+            </li>
+          </ul>
         </div>
-        
+
         <div class="section">
-            <h2>3. How We Use Your Data</h2>
-            <ul>
-                <li>To provide and enhance our services, including scheduling, notifications, and community engagement.</li>
-                <li>To detect driving activity and ensure safe usage of the application.</li>
-                <li>To analyze app performance and optimize user experience.</li>
-                <li>To comply with legal and regulatory obligations.</li>
-            </ul>
+          <h2>3. How We Use Your Data</h2>
+          <ul>
+            <li>
+              To provide and enhance our services, including scheduling,
+              notifications, and community engagement.
+            </li>
+            <li>
+              To detect driving activity and ensure safe usage of the
+              application.
+            </li>
+            <li>To analyze app performance and optimize user experience.</li>
+            <li>To comply with legal and regulatory obligations.</li>
+          </ul>
         </div>
-        
+
         <div class="section">
-            <h2>4. Data Sharing & Security</h2>
-            <ul>
-                <li>We do not sell or trade your personal information.</li>
-                <li>We may share anonymized data for analytics and service improvements.</li>
-                <li>We implement industry-standard encryption and security measures to protect your data.</li>
-                <li>Your account data is accessible only by authorized personnel for maintenance and support.</li>
-            </ul>
+          <h2>4. Data Sharing & Security</h2>
+          <ul>
+            <li>We do not sell or trade your personal information.</li>
+            <li>
+              We may share anonymized data for analytics and service
+              improvements.
+            </li>
+            <li>
+              We implement industry-standard encryption and security measures to
+              protect your data.
+            </li>
+            <li>
+              Your account data is accessible only by authorized personnel for
+              maintenance and support.
+            </li>
+          </ul>
         </div>
-        
+
         <div class="section">
-            <h2>5. Notifications & Tracking</h2>
-            <ul>
-                <li>Users receive essential notifications regarding work schedules, rest breaks, and safety alerts.</li>
-                <li>Driving detection is used solely for ensuring user safety and improving app features.</li>
-                <li>Location tracking is optional and can be disabled by users within settings.</li>
-            </ul>
+          <h2>5. Notifications & Tracking</h2>
+          <ul>
+            <li>
+              Users receive essential notifications regarding work schedules,
+              rest breaks, and safety alerts.
+            </li>
+            <li>
+              Driving detection is used solely for ensuring user safety and
+              improving app features.
+            </li>
+            <li>
+              Location tracking is optional and can be disabled by users within
+              settings.
+            </li>
+          </ul>
         </div>
-        
+
         <div class="section">
-            <h2>6. Data Retention</h2>
-            <p>We retain your data for as long as necessary to provide services and meet legal obligations. Users may request data deletion or modification at any time.</p>
+          <h2>6. Data Retention</h2>
+          <p>
+            We retain your data for as long as necessary to provide services and
+            meet legal obligations. Users may request data deletion or
+            modification at any time.
+          </p>
         </div>
-        
+
         <div class="section">
-            <h2>7. User Rights & Control</h2>
-            <ul>
-                <li>Users can access, update, or delete their personal information within their account settings.</li>
-                <li>Users have the right to opt out of certain data processing activities.</li>
-                <li>Requests for data modification or removal can be sent to our support team.</li>
-            </ul>
+          <h2>7. User Rights & Control</h2>
+          <ul>
+            <li>
+              Users can access, update, or delete their personal information
+              within their account settings.
+            </li>
+            <li>
+              Users have the right to opt out of certain data processing
+              activities.
+            </li>
+            <li>
+              Requests for data modification or removal can be sent to our
+              support team.
+            </li>
+          </ul>
         </div>
-        
+
         <div class="section">
-            <h2>8. Third-Party Services</h2>
-            <p>We may use third-party services (such as analytics providers and payment processors) to enhance our platform. These services have their own privacy policies governing data usage.</p>
+          <h2>8. Third-Party Services</h2>
+          <p>
+            We may use third-party services (such as analytics providers and
+            payment processors) to enhance our platform. These services have
+            their own privacy policies governing data usage.
+          </p>
         </div>
-        
+
         <div class="section">
-            <h2>9. Children's Privacy</h2>
-            <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from minors.</p>
+          <h2>9. Children's Privacy</h2>
+          <p>
+            Our services are not intended for individuals under the age of 18.
+            We do not knowingly collect personal information from minors.
+          </p>
         </div>
-        
+
         <div class="section">
-            <h2>10. Changes to this Privacy Policy</h2>
-            <p>We may update this Privacy Policy periodically to reflect changes in our practices. Users will be notified of significant changes via email or app updates.</p>
+          <h2>10. Changes to this Privacy Policy</h2>
+          <p>
+            We may update this Privacy Policy periodically to reflect changes in
+            our practices. Users will be notified of significant changes via
+            email or app updates.
+          </p>
         </div>
-        
+
         <div class="section">
-            <h2>11. Contact Us</h2>
-            <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at <strong>Gigwaysofficial@gmail.com</strong>.</p>
+          <h2>11. Contact Us</h2>
+          <p>
+            If you have any questions or concerns regarding this Privacy Policy,
+            please contact us at <strong>Gigwaysofficial@gmail.com</strong>.
+          </p>
         </div>
-    </div>
-</body>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© GigWays LLC 2025. All rights reserved.</p>
+    </footer>
+
+    <!--===== SCROLL REVEAL =====-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"
+      integrity="sha256-YHdamLXLIBEicRscu4gge3gdzJSWGvvWggYMiCYwCg0="
+      crossorigin="anonymous"
+    ></script>
+    <!--===== MAIN JS =====-->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>
