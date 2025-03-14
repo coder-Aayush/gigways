@@ -152,55 +152,6 @@ if (form) {
   form.addEventListener("submit", handleSubmit);
 }
 
-/*===== INITIALIZE SWIPER =====*/
-document.addEventListener("DOMContentLoaded", function () {
-  const swiperContainer = document.querySelector(".swiper-container");
-
-  if (swiperContainer) {
-    const swiper = new Swiper(".swiper-container", {
-      effect: "coverflow",
-      grabCursor: true,
-      centeredSlides: true,
-      slidesPerView: "auto",
-      initialSlide: 1,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-      },
-      coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 1,
-        slideShadows: false,
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is <= 576px
-        576: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        // when window width is <= 768px
-        768: {
-          slidesPerView: "auto",
-          spaceBetween: 30,
-        },
-      },
-    });
-  }
-});
-
 /*===== SCROLL ACTIVE LINK =====*/
 const sections = document.querySelectorAll("section[id]");
 
@@ -257,3 +208,115 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+/*===== BUBBLE BACKGROUND GENERATION =====*/
+document.addEventListener("DOMContentLoaded", function () {
+  const bubbleContainer = document.querySelector(".bubble-container");
+  const bubbleCount = 30; // adjust number of bubbles as desired
+
+  for (let i = 0; i < bubbleCount; i++) {
+    const bubble = document.createElement("div");
+    bubble.classList.add("bubble");
+    // Random size between 20px and 80px
+    const size = Math.floor(Math.random() * 60) + 20;
+    bubble.style.width = `${size}px`;
+    bubble.style.height = `${size}px`;
+    // Random horizontal starting position
+    bubble.style.left = Math.floor(Math.random() * 100) + "%";
+    // Random animation duration between 6s and 12s
+    const duration = Math.floor(Math.random() * 6) + 6;
+    bubble.style.animationDuration = `${duration}s`;
+    // Random animation delay to avoid uniformity
+    bubble.style.animationDelay = Math.random() * 5 + "s";
+    bubbleContainer.appendChild(bubble);
+  }
+});
+
+/*===== SLIDER FUNCTIONALITY =====*/
+(function () {
+  const sliderWrapper = document.querySelector(".slider-wrapper");
+  const sliderTrack = document.querySelector(".slider-track");
+  const slides = document.querySelectorAll(".slide");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const indicatorsContainer = document.querySelector(".indicators");
+
+  const totalSlides = slides.length;
+  const groupSize = 3;
+  const groupCount = Math.ceil(totalSlides / groupSize);
+  let currentGroup = 0;
+
+  // Build indicator dots for each group
+  function buildIndicators() {
+    indicatorsContainer.innerHTML = "";
+    for (let i = 0; i < groupCount; i++) {
+      const dot = document.createElement("span");
+      dot.classList.add("dot");
+      if (i === currentGroup) dot.classList.add("active");
+      dot.addEventListener("click", () => {
+        currentGroup = i;
+        updateSlider();
+      });
+      indicatorsContainer.appendChild(dot);
+    }
+  }
+
+  // Update slider by translating the slider track to show the current group
+  function updateSlider() {
+    const wrapperWidth = sliderWrapper.clientWidth;
+    sliderTrack.style.transform = `translateX(-${
+      currentGroup * wrapperWidth
+    }px)`;
+
+    // Update active indicator dot
+    const dots = document.querySelectorAll(".dot");
+    dots.forEach((dot, i) => {
+      if (i === currentGroup) dot.classList.add("active");
+      else dot.classList.remove("active");
+    });
+  }
+
+  // Navigation controls
+  prevBtn.addEventListener("click", () => {
+    currentGroup = currentGroup > 0 ? currentGroup - 1 : groupCount - 1;
+    updateSlider();
+  });
+
+  nextBtn.addEventListener("click", () => {
+    currentGroup = currentGroup < groupCount - 1 ? currentGroup + 1 : 0;
+    updateSlider();
+  });
+
+  // Auto-slide every 3 seconds
+  setInterval(() => {
+    nextBtn.click();
+  }, 3000);
+
+  // Update on window resize
+  window.addEventListener("resize", updateSlider);
+
+  // Initialize
+  buildIndicators();
+  updateSlider();
+})();
+
+// document.addEventListener("DOMContentLoaded", function () {
+//   const bubbleContainer = document.querySelector(".bubble-container");
+//   // add z-index to bubble container
+//   bubbleContainer.style.zIndex = 9;
+//   const bubbleCount = 20;
+//   for (let i = 0; i < bubbleCount; i++) {
+//     const bubble = document.createElement("div");
+//     bubble.classList.add("bubble");
+//     const size = Math.floor(Math.random() * 50) + 20;
+//     bubble.style.width = size + "px";
+//     // add color
+//     bubble.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+//     bubble.style.height = size + "px";
+//     bubble.style.left = Math.random() * 100 + "%";
+//     bubble.style.top = Math.random() * 100 + "%";
+//     bubble.style.animationDuration = Math.random() * 4 + 8 + "s";
+//     bubble.style.animationDelay = Math.random() * 5 + "s";
+//     bubbleContainer.appendChild(bubble);
+//   }
+// });
